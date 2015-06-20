@@ -84,12 +84,12 @@ class GameScene: BaseScene {
         self.centerOnNode(self.camera)
         self.camera.position = point
     }
-    
+
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
 
-            self.createStomachDonuts() // TODO: ドーナツが食べられてたタイミングでcreateするようにする
+            // TODO: ドーナツをタッチしたら消す
         }
     }
    
@@ -122,8 +122,8 @@ class GameScene: BaseScene {
         eatDonuts.startAnimation(self.eatDunutsDuration)
     }
 
-    func createStomachDonuts() {
-        let stomachDonuts = StomachDonuts()
+    func createStomachDonuts(eatDonuts: EatDonuts) {
+        let stomachDonuts = StomachDonuts(eatDonuts: eatDonuts)
         stomachDonuts.onPhysics()
         self.stomachSeat.addChild(stomachDonuts)
     }

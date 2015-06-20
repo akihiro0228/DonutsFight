@@ -12,12 +12,17 @@ class DonutsMan: SpriteNode {
 
     override init() {
         super.init()
-        self.texture = SKTexture(imageNamed: "donuts_man_01")
+        self.texture = SKTexture(imageNamed: "donuts_man_03")
         self.size = CGSize(width: 80, height: 80)
         self.position = CGPoint(x: -110, y: 0)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func eatAnimation() {
+        // TODO:
+        println("animation!!")
     }
 }

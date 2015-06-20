@@ -61,7 +61,7 @@ class Donuts: SpriteNode {
     }
 
     func onPhysics() {
-        physicsBody = SKPhysicsBody(circleOfRadius: convert.o(self.size.width/2))
+        self.physicsBody = SKPhysicsBody(circleOfRadius: convert.o(self.size.width/2))
     }
 
     func setRandomSize(Min _Min : CGFloat, Max _Max : CGFloat) {

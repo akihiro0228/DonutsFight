@@ -10,9 +10,10 @@ import SpriteKit
 
 class StomachDonuts: Donuts {
 
-    override init() {
+    init(eatDonuts: EatDonuts) {
         super.init()
-        setRandomSize(Min: 20, Max: 50)
+        self.size = eatDonuts.size
+        self.texture = SKTexture(imageNamed: eatDonuts.type.imageName())
         setRandomPosition(Min: -100, Max: 100)
     }
 
