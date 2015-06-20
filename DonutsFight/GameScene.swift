@@ -50,24 +50,25 @@ class GameScene: BaseScene {
         self.world.addChild(self.camera)
         self.addChild(self.overlay)
 
-        // XXX: 仮
+        // 食事シート
         self.eatSeat.size = CGSize(width: 320, height: 142)
         self.eatSeat.position = CGPoint(x: 0, y: 213)
-        self.eatSeat.color = UIColor.whiteColor()
+        self.eatSeat.texture = SKTexture(imageNamed: "eat_background")
         self.eatSeat.zPosition = 100
         self.world.addChild(self.eatSeat)
 
-        // XXX: 仮
+        // 胃シート
         self.stomachSeat.size = CGSize(width: 320, height: 426)
         self.stomachSeat.position = CGPoint(x: 0, y: -71)
-        self.stomachSeat.color = UIColor.whiteColor()
+        self.stomachSeat.texture = SKTexture(imageNamed: "stomach_background")
         self.world.addChild(self.stomachSeat)
 
         // DonutsMan
         self.eatSeat.addChild(self.donutsMan)
 
         // 壁
-        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+        let wallRect = CGRect(x: 15, y: 15, width: 290, height: 538)
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: convert.oRect(wallRect))
 
         // 重力を発生させる
         self.setGravity(CGVectorMake(0, -2.0))
