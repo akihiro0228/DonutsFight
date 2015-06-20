@@ -17,7 +17,11 @@ class GameScene: BaseScene {
     let donutsMan   : DonutsMan
 
     var eatDunutsDuration : CGFloat
+    var isLastUpdateTimeInitialized : Bool
+    var lastUpdateTime : CFTimeInterval
+    var gameTime : Double
     var gameCount : Int
+    var createEatDonutsTime : Double
 
     override init(size: CGSize) {
         self.world       = World()
@@ -27,7 +31,11 @@ class GameScene: BaseScene {
         self.stomachSeat = SpriteNode()
         self.donutsMan   = DonutsMan()
         self.eatDunutsDuration = 5
+        self.isLastUpdateTimeInitialized = false
+        self.lastUpdateTime = 0
+        self.gameTime = 0
         self.gameCount   = 0
+        self.createEatDonutsTime = 0
         super.init(size: size)
 
         setup()
@@ -82,15 +90,27 @@ class GameScene: BaseScene {
             let location = touch.locationInNode(self)
 
             self.createStomachDonuts() // TODO: ドーナツが食べられてたタイミングでcreateするようにする
-            // self.createEatDonuts()     // TODO: 一定時間ごとにcreateするようにする
         }
     }
    
     override func update(currentTime: CFTimeInterval) {
+        // FPSに依存しない実時間を測る
+        if !self.isLastUpdateTimeInitialized {
+            self.isLastUpdateTimeInitialized = true
+            self.lastUpdateTime = currentTime;
+        }
 
-        let donutsInterval = Int(12 * self.eatDunutsDuration)
-        if self.gameCount % donutsInterval == 0{
+        let timeSinceLast = currentTime - self.lastUpdateTime
+        self.lastUpdateTime = currentTime
+
+        self.gameTime += timeSinceLast
+
+
+        // 一定間隔でドーナツを生成する
+        let donutsInterval = Int(self.eatDunutsDuration / 5)
+        if  Int(self.gameTime) != Int(self.createEatDonutsTime) && Int(self.gameTime) % donutsInterval == 0{
             self.createEatDonuts()
+            self.createEatDonutsTime = self.gameTime
         }
 
         self.gameCount++
