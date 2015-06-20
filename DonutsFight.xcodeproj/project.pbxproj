@@ -25,6 +25,7 @@
 		C36FEAB61B354EE500C2521D /* EatDonuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB51B354EE500C2521D /* EatDonuts.swift */; };
 		C36FEAB81B354F6A00C2521D /* StomachDonuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */; };
 		C36FEABA1B355A7F00C2521D /* Donuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB91B355A7F00C2521D /* Donuts.swift */; };
+		C36FEABC1B355DD200C2521D /* DonutsMan.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEABB1B355DD200C2521D /* DonutsMan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		C36FEAB51B354EE500C2521D /* EatDonuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EatDonuts.swift; sourceTree = "<group>"; };
 		C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StomachDonuts.swift; sourceTree = "<group>"; };
 		C36FEAB91B355A7F00C2521D /* Donuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donuts.swift; sourceTree = "<group>"; };
+		C36FEABB1B355DD200C2521D /* DonutsMan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DonutsMan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				C36FEAB91B355A7F00C2521D /* Donuts.swift */,
 				C36FEAB51B354EE500C2521D /* EatDonuts.swift */,
 				C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */,
+				C36FEABB1B355DD200C2521D /* DonutsMan.swift */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				C36FEAAF1B35366900C2521D /* World.swift in Sources */,
 				C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */,
 				C36FEAB11B35367200C2521D /* Overlay.swift in Sources */,
+				C36FEABC1B355DD200C2521D /* DonutsMan.swift in Sources */,
 				C36FEAA71B35356100C2521D /* Node.swift in Sources */,
 				C36FEA9A1B352E7100C2521D /* Convert.swift in Sources */,
 				C36FEAAD1B35361100C2521D /* BaseScene.swift in Sources */,

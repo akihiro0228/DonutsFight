@@ -14,6 +14,7 @@ class GameScene: BaseScene {
     let camera      : Camera
     let eatSeat     : SpriteNode
     let stomachSeat : SpriteNode
+    let donutsMan   : DonutsMan
 
     override init(size: CGSize) {
         self.world       = World()
@@ -21,6 +22,7 @@ class GameScene: BaseScene {
         self.camera      = Camera()
         self.eatSeat     = SpriteNode()
         self.stomachSeat = SpriteNode()
+        self.donutsMan   = DonutsMan()
         super.init(size: size)
 
         setup()
@@ -47,6 +49,10 @@ class GameScene: BaseScene {
         self.stomachSeat.position = CGPoint(x: 0, y: -71)
         self.stomachSeat.color = UIColor.brownColor()
         self.world.addChild(self.stomachSeat)
+
+        // DonutsMan
+        self.donutsMan.color = UIColor.blackColor()
+        self.eatSeat.addChild(self.donutsMan)
 
         // 壁
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
