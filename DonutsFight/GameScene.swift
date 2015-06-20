@@ -9,14 +9,18 @@
 import SpriteKit
 
 class GameScene: BaseScene {
-    let world:   World
-    let overlay: Overlay
-    let camera:  Camera
+    let world       : World
+    let overlay     : Overlay
+    let camera      : Camera
+    let eatSeat     : SpriteNode
+    let stomachSeat : SpriteNode
 
     override init(size: CGSize) {
-        self.world   = World()
-        self.overlay = Overlay()
-        self.camera  = Camera()
+        self.world       = World()
+        self.overlay     = Overlay()
+        self.camera      = Camera()
+        self.eatSeat     = SpriteNode()
+        self.stomachSeat = SpriteNode()
         super.init(size: size)
 
         setup()
@@ -32,18 +36,23 @@ class GameScene: BaseScene {
         self.addChild(self.overlay)
 
         // XXX: 仮
-        let eatSeat = SpriteNode()
-        eatSeat.size = CGSize(width: 320, height: 142)
-        eatSeat.position = CGPoint(x: 0, y: 213)
-        eatSeat.color = UIColor.blueColor()
-        self.world.addChild(eatSeat)
+        self.eatSeat.size = CGSize(width: 320, height: 142)
+        self.eatSeat.position = CGPoint(x: 0, y: 213)
+        self.eatSeat.color = UIColor.blueColor()
+        self.eatSeat.zPosition = 100
+        self.world.addChild(self.eatSeat)
 
         // XXX: 仮
-        let stomachSeat = SpriteNode()
-        stomachSeat.size = CGSize(width: 320, height: 426)
-        stomachSeat.position = CGPoint(x: 0, y: -71)
-        stomachSeat.color = UIColor.brownColor()
-        self.world.addChild(stomachSeat)
+        self.stomachSeat.size = CGSize(width: 320, height: 426)
+        self.stomachSeat.position = CGPoint(x: 0, y: -71)
+        self.stomachSeat.color = UIColor.brownColor()
+        self.world.addChild(self.stomachSeat)
+
+        // 壁
+        self.physicsBody = SKPhysicsBody(edgeLoopFromRect: self.frame)
+
+        // 重力を発生させる
+        self.setGravity(CGVectorMake(0, -2.0))
     }
 
     override func didMoveToView(view: SKView) {
@@ -59,10 +68,28 @@ class GameScene: BaseScene {
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        for touch in (touches as! Set<UITouch>) {
+            let location = touch.locationInNode(self)
 
+            self.createStomachDonuts() // TODO: ドーナツが食べられてたタイミングでcreateするようにする
+            // self.createEatDonuts()     // TODO: 一定時間ごとにcreateするようにする
+        }
     }
    
     override func update(currentTime: CFTimeInterval) {
 
+    }
+
+    func createEatDonuts() {
+        let eatDonuts = EatDonuts()
+        eatDonuts.color = UIColor.blackColor() // TODO: 仮当て
+        self.eatSeat.addChild(eatDonuts)
+    }
+
+    func createStomachDonuts() {
+        let stomachDonuts = StomachDonuts()
+        stomachDonuts.color = UIColor.blackColor() // TODO: 仮当て
+        stomachDonuts.onPhysics()
+        self.stomachSeat.addChild(stomachDonuts)
     }
 }

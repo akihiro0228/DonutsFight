@@ -22,6 +22,9 @@
 		C36FEAAF1B35366900C2521D /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAAE1B35366900C2521D /* World.swift */; };
 		C36FEAB11B35367200C2521D /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB01B35367200C2521D /* Overlay.swift */; };
 		C36FEAB31B35367900C2521D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB21B35367900C2521D /* Camera.swift */; };
+		C36FEAB61B354EE500C2521D /* EatDonuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB51B354EE500C2521D /* EatDonuts.swift */; };
+		C36FEAB81B354F6A00C2521D /* StomachDonuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */; };
+		C36FEABA1B355A7F00C2521D /* Donuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB91B355A7F00C2521D /* Donuts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		C36FEAAE1B35366900C2521D /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		C36FEAB01B35367200C2521D /* Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		C36FEAB21B35367900C2521D /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		C36FEAB51B354EE500C2521D /* EatDonuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EatDonuts.swift; sourceTree = "<group>"; };
+		C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StomachDonuts.swift; sourceTree = "<group>"; };
+		C36FEAB91B355A7F00C2521D /* Donuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donuts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		C36FEAA11B3534F600C2521D /* App */ = {
 			isa = PBXGroup;
 			children = (
+				C36FEAB41B354E8900C2521D /* Component */,
 				C36FEAA21B3534FB00C2521D /* Scene */,
 			);
 			name = App;
@@ -183,6 +190,16 @@
 				C36FEAAE1B35366900C2521D /* World.swift */,
 				C36FEAB01B35367200C2521D /* Overlay.swift */,
 				C36FEAB21B35367900C2521D /* Camera.swift */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		C36FEAB41B354E8900C2521D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEAB91B355A7F00C2521D /* Donuts.swift */,
+				C36FEAB51B354EE500C2521D /* EatDonuts.swift */,
+				C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -288,15 +305,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36FEAB31B35367900C2521D /* Camera.swift in Sources */,
+				C36FEAB61B354EE500C2521D /* EatDonuts.swift in Sources */,
 				C36FEAAF1B35366900C2521D /* World.swift in Sources */,
 				C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */,
 				C36FEAB11B35367200C2521D /* Overlay.swift in Sources */,
 				C36FEAA71B35356100C2521D /* Node.swift in Sources */,
 				C36FEA9A1B352E7100C2521D /* Convert.swift in Sources */,
 				C36FEAAD1B35361100C2521D /* BaseScene.swift in Sources */,
+				C36FEABA1B355A7F00C2521D /* Donuts.swift in Sources */,
 				C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */,
 				C36FEAAB1B35358300C2521D /* LabelNode.swift in Sources */,
 				C36FEAA91B35357700C2521D /* SpriteNode.swift in Sources */,
+				C36FEAB81B354F6A00C2521D /* StomachDonuts.swift in Sources */,
 				C36FEA761B352BBA00C2521D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,6 +515,7 @@
 				C36FEA951B352BBB00C2521D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C36FEA961B352BBB00C2521D /* Build configuration list for PBXNativeTarget "DonutsFightTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +524,7 @@
 				C36FEA981B352BBB00C2521D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
