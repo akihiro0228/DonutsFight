@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		C36FEA761B352BBA00C2521D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA751B352BBA00C2521D /* AppDelegate.swift */; };
-		C36FEA781B352BBA00C2521D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C36FEA771B352BBA00C2521D /* GameScene.sks */; };
 		C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA791B352BBA00C2521D /* GameScene.swift */; };
 		C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA7B1B352BBA00C2521D /* GameViewController.swift */; };
 		C36FEA7F1B352BBA00C2521D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C36FEA7D1B352BBA00C2521D /* Main.storyboard */; };
 		C36FEA811B352BBA00C2521D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36FEA801B352BBA00C2521D /* Images.xcassets */; };
 		C36FEA841B352BBA00C2521D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C36FEA821B352BBA00C2521D /* LaunchScreen.xib */; };
 		C36FEA901B352BBB00C2521D /* DonutsFightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA8F1B352BBB00C2521D /* DonutsFightTests.swift */; };
+		C36FEA9A1B352E7100C2521D /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA991B352E7100C2521D /* Convert.swift */; };
+		C36FEAA71B35356100C2521D /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAA61B35356100C2521D /* Node.swift */; };
+		C36FEAA91B35357700C2521D /* SpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAA81B35357700C2521D /* SpriteNode.swift */; };
+		C36FEAAB1B35358300C2521D /* LabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAAA1B35358300C2521D /* LabelNode.swift */; };
+		C36FEAAD1B35361100C2521D /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAAC1B35361100C2521D /* BaseScene.swift */; };
+		C36FEAAF1B35366900C2521D /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAAE1B35366900C2521D /* World.swift */; };
+		C36FEAB11B35367200C2521D /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB01B35367200C2521D /* Overlay.swift */; };
+		C36FEAB31B35367900C2521D /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEAB21B35367900C2521D /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +38,6 @@
 		C36FEA701B352BBA00C2521D /* DonutsFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutsFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36FEA741B352BBA00C2521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36FEA751B352BBA00C2521D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C36FEA771B352BBA00C2521D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		C36FEA791B352BBA00C2521D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		C36FEA7B1B352BBA00C2521D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C36FEA7E1B352BBA00C2521D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +46,14 @@
 		C36FEA891B352BBB00C2521D /* DonutsFightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DonutsFightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36FEA8E1B352BBB00C2521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36FEA8F1B352BBB00C2521D /* DonutsFightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonutsFightTests.swift; sourceTree = "<group>"; };
+		C36FEA991B352E7100C2521D /* Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		C36FEAA61B35356100C2521D /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		C36FEAA81B35357700C2521D /* SpriteNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpriteNode.swift; sourceTree = "<group>"; };
+		C36FEAAA1B35358300C2521D /* LabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelNode.swift; sourceTree = "<group>"; };
+		C36FEAAC1B35361100C2521D /* BaseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
+		C36FEAAE1B35366900C2521D /* World.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		C36FEAB01B35367200C2521D /* Overlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
+		C36FEAB21B35367900C2521D /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +95,13 @@
 		C36FEA721B352BBA00C2521D /* DonutsFight */ = {
 			isa = PBXGroup;
 			children = (
-				C36FEA751B352BBA00C2521D /* AppDelegate.swift */,
-				C36FEA771B352BBA00C2521D /* GameScene.sks */,
-				C36FEA791B352BBA00C2521D /* GameScene.swift */,
-				C36FEA7B1B352BBA00C2521D /* GameViewController.swift */,
 				C36FEA7D1B352BBA00C2521D /* Main.storyboard */,
-				C36FEA801B352BBA00C2521D /* Images.xcassets */,
 				C36FEA821B352BBA00C2521D /* LaunchScreen.xib */,
+				C36FEA751B352BBA00C2521D /* AppDelegate.swift */,
+				C36FEA7B1B352BBA00C2521D /* GameViewController.swift */,
+				C36FEAA11B3534F600C2521D /* App */,
+				C36FEAA01B3534DA00C2521D /* Framework */,
+				C36FEA801B352BBA00C2521D /* Images.xcassets */,
 				C36FEA731B352BBA00C2521D /* Supporting Files */,
 			);
 			path = DonutsFight;
@@ -116,6 +130,61 @@
 				C36FEA8E1B352BBB00C2521D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C36FEAA01B3534DA00C2521D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEA991B352E7100C2521D /* Convert.swift */,
+				C36FEAA31B35352200C2521D /* Wrapper */,
+				C36FEAA41B35352800C2521D /* Scene */,
+				C36FEAA51B35353400C2521D /* Component */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		C36FEAA11B3534F600C2521D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEAA21B3534FB00C2521D /* Scene */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		C36FEAA21B3534FB00C2521D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEA791B352BBA00C2521D /* GameScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		C36FEAA31B35352200C2521D /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEAA61B35356100C2521D /* Node.swift */,
+				C36FEAA81B35357700C2521D /* SpriteNode.swift */,
+				C36FEAAA1B35358300C2521D /* LabelNode.swift */,
+			);
+			name = Wrapper;
+			sourceTree = "<group>";
+		};
+		C36FEAA41B35352800C2521D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEAAC1B35361100C2521D /* BaseScene.swift */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		C36FEAA51B35353400C2521D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C36FEAAE1B35366900C2521D /* World.swift */,
+				C36FEAB01B35367200C2521D /* Overlay.swift */,
+				C36FEAB21B35367900C2521D /* Camera.swift */,
+			);
+			name = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,7 +269,6 @@
 			files = (
 				C36FEA841B352BBA00C2521D /* LaunchScreen.xib in Resources */,
 				C36FEA811B352BBA00C2521D /* Images.xcassets in Resources */,
-				C36FEA781B352BBA00C2521D /* GameScene.sks in Resources */,
 				C36FEA7F1B352BBA00C2521D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,8 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36FEAB31B35367900C2521D /* Camera.swift in Sources */,
+				C36FEAAF1B35366900C2521D /* World.swift in Sources */,
 				C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */,
+				C36FEAB11B35367200C2521D /* Overlay.swift in Sources */,
+				C36FEAA71B35356100C2521D /* Node.swift in Sources */,
+				C36FEA9A1B352E7100C2521D /* Convert.swift in Sources */,
+				C36FEAAD1B35361100C2521D /* BaseScene.swift in Sources */,
 				C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */,
+				C36FEAAB1B35358300C2521D /* LabelNode.swift in Sources */,
+				C36FEAA91B35357700C2521D /* SpriteNode.swift in Sources */,
 				C36FEA761B352BBA00C2521D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

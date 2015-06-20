@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>095C5133-4228-4CA0-A625-6FA669260A70</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BAC0BD8BA099717203A5C2D18597D04F82FBB53D</key>
+		<string>github.com:akihiro0228/DonutsFight.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DonutsFight.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BAC0BD8BA099717203A5C2D18597D04F82FBB53D</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:akihiro0228/DonutsFight.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BAC0BD8BA099717203A5C2D18597D04F82FBB53D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BAC0BD8BA099717203A5C2D18597D04F82FBB53D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DonutsFight</string>
+		</dict>
+	</array>
+</dict>
+</plist>
