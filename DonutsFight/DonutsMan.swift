@@ -32,7 +32,14 @@ class DonutsMan: SpriteNode {
     }
 
     func eatAnimation() {
-        // TODO:
-        println("animation!!")
+        let eatImages  = Array(self.images[2...3])
+        let moguImages = Array(self.images[0...1])
+        let action01 = SKAction.animateWithTextures(eatImages, timePerFrame: 0.2)
+        let action02 = SKAction.animateWithTextures(moguImages, timePerFrame: 0.2)
+        let repeatAction02 = SKAction.repeatAction(action02, count: 5)
+        
+        self.runAction(SKAction.sequence([action01, repeatAction02]), completion: {
+
+        })
     }
 }
