@@ -102,7 +102,11 @@ class GameScene: BaseScene {
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
 
-            // TODO: ドーナツをタッチしたら消す
+            let target = self.nodeAtPoint(location)
+            if target.name == "stomachDonuts" {
+                // TODO: 本当はただ消すだけじゃない
+                target.removeFromParent()
+            }
         }
     }
    

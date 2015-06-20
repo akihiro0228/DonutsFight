@@ -12,8 +12,9 @@ class StomachDonuts: Donuts {
 
     init(eatDonuts: EatDonuts) {
         super.init()
-        self.size = eatDonuts.size
+        self.size = CGSize(width: eatDonuts.size.width + 30, height: eatDonuts.size.height + 30)
         self.texture = SKTexture(imageNamed: eatDonuts.type.imageName())
+        self.name = "stomachDonuts"
         setRandomPosition(Min: -100, Max: 100)
     }
 
