@@ -10,6 +10,16 @@ import SpriteKit
 
 class Donuts: SpriteNode {
 
+    override init() {
+        super.init()
+
+        self.texture = SKTexture(imageNamed: "donuts_01")
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func onPhysics() {
         physicsBody = SKPhysicsBody(circleOfRadius: convert.o(self.size.width/2))
     }

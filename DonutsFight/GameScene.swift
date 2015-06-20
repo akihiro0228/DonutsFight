@@ -40,14 +40,14 @@ class GameScene: BaseScene {
         // XXX: 仮
         self.eatSeat.size = CGSize(width: 320, height: 142)
         self.eatSeat.position = CGPoint(x: 0, y: 213)
-        self.eatSeat.color = UIColor.blueColor()
+        self.eatSeat.color = UIColor.whiteColor()
         self.eatSeat.zPosition = 100
         self.world.addChild(self.eatSeat)
 
         // XXX: 仮
         self.stomachSeat.size = CGSize(width: 320, height: 426)
         self.stomachSeat.position = CGPoint(x: 0, y: -71)
-        self.stomachSeat.color = UIColor.brownColor()
+        self.stomachSeat.color = UIColor.whiteColor()
         self.world.addChild(self.stomachSeat)
 
         // DonutsMan
@@ -88,13 +88,11 @@ class GameScene: BaseScene {
 
     func createEatDonuts() {
         let eatDonuts = EatDonuts()
-        eatDonuts.color = UIColor.blackColor() // TODO: 仮当て
         self.eatSeat.addChild(eatDonuts)
     }
 
     func createStomachDonuts() {
         let stomachDonuts = StomachDonuts()
-        stomachDonuts.color = UIColor.blackColor() // TODO: 仮当て
         stomachDonuts.onPhysics()
         self.stomachSeat.addChild(stomachDonuts)
     }
