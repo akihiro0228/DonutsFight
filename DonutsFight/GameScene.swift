@@ -16,6 +16,9 @@ class GameScene: BaseScene {
     let stomachSeat : SpriteNode
     let donutsMan   : DonutsMan
 
+    var eatDunutsDuration : CGFloat
+    var gameCount : Int
+
     override init(size: CGSize) {
         self.world       = World()
         self.overlay     = Overlay()
@@ -23,6 +26,8 @@ class GameScene: BaseScene {
         self.eatSeat     = SpriteNode()
         self.stomachSeat = SpriteNode()
         self.donutsMan   = DonutsMan()
+        self.eatDunutsDuration = 5
+        self.gameCount   = 0
         super.init(size: size)
 
         setup()
@@ -83,11 +88,18 @@ class GameScene: BaseScene {
    
     override func update(currentTime: CFTimeInterval) {
 
+        let donutsInterval = Int(12 * self.eatDunutsDuration)
+        if self.gameCount % donutsInterval == 0{
+            self.createEatDonuts()
+        }
+
+        self.gameCount++
     }
 
     func createEatDonuts() {
         let eatDonuts = EatDonuts()
         self.eatSeat.addChild(eatDonuts)
+        eatDonuts.startAnimation(self.eatDunutsDuration)
     }
 
     func createStomachDonuts() {
