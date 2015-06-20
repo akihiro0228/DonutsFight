@@ -15,6 +15,7 @@ class GameScene: BaseScene {
     let eatSeat     : SpriteNode
     let stomachSeat : SpriteNode
     let donutsMan   : DonutsMan
+    let scoreSeat   : SpriteNode
 
     var eatDunutsDuration : CGFloat
     var isLastUpdateTimeInitialized : Bool
@@ -30,6 +31,7 @@ class GameScene: BaseScene {
         self.eatSeat     = SpriteNode()
         self.stomachSeat = SpriteNode()
         self.donutsMan   = DonutsMan()
+        self.scoreSeat   = SpriteNode()
         self.eatDunutsDuration = 5
         self.isLastUpdateTimeInitialized = false
         self.lastUpdateTime = 0
@@ -56,6 +58,16 @@ class GameScene: BaseScene {
         self.eatSeat.texture = SKTexture(imageNamed: "eat_background")
         self.eatSeat.zPosition = 100
         self.world.addChild(self.eatSeat)
+
+        self.scoreSeat.size = CGSize(width: 320, height: 142)
+        self.scoreSeat.texture = SKTexture(imageNamed: "score_background")
+        self.eatSeat.addChild(self.scoreSeat)
+
+        let gallery = SpriteNode()
+        gallery.size = CGSize(width: 320, height: 142)
+        gallery.texture = SKTexture(imageNamed: "gallery")
+        gallery.zPosition = 100
+        self.eatSeat.addChild(gallery)
 
         // 胃シート
         self.stomachSeat.size = CGSize(width: 320, height: 426)

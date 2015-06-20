@@ -22,7 +22,7 @@ class DonutsMan: SpriteNode {
 
             self.images.append(SKTexture(rect: CGRect(x: x, y: 0, width: width, height: height), inTexture: donutsMans))
         }
-        self.texture = images[2]
+        self.texture = images[0]
         self.size = CGSize(width: 80, height: 80)
         self.position = CGPoint(x: -110, y: 0)
     }
