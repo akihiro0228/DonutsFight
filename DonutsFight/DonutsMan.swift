@@ -12,8 +12,9 @@ class DonutsMan: SpriteNode {
 
     override init() {
         super.init()
-        self.size = CGSize(width: 60, height: 60)
-        self.position = CGPoint(x: -120, y: 0)
+        self.texture = SKTexture(imageNamed: "donuts_man_01")
+        self.size = CGSize(width: 80, height: 80)
+        self.position = CGPoint(x: -110, y: 0)
     }
 
     required init?(coder aDecoder: NSCoder) {

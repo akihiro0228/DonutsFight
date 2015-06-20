@@ -51,7 +51,6 @@ class GameScene: BaseScene {
         self.world.addChild(self.stomachSeat)
 
         // DonutsMan
-        self.donutsMan.color = UIColor.blackColor()
         self.eatSeat.addChild(self.donutsMan)
 
         // 壁
