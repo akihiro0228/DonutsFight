@@ -96,6 +96,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.eatSeat.addChild(self.scoreSeat)
 
         // スコア
+        /*
         let scoreLabel = LabelNode()
         scoreLabel.text = "すこあ"
         scoreLabel.position = CGPoint(x: 45, y: 40)
@@ -105,9 +106,10 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
         scoreLabel.verticalAlignmentMode   = SKLabelVerticalAlignmentMode.Center
         self.scoreSeat.addChild(scoreLabel)
+        */
 
-        self.score.position = CGPoint(x: 105, y: 40)
-        self.score.fontSize = 16
+        self.score.position = CGPoint(x: 80, y: 40)
+        self.score.fontSize = 20
         self.score.fontName = "かんじゅくゴシック"
         self.score.fontColor = UIColor.whiteColor()
         self.score.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
@@ -174,7 +176,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
 
                 if removeDonuts != nil && stomachDonuts != nil {
                     if removeDonuts!.type == stomachDonuts!.type {
-                        stomachDonuts?.startRemoveAnimation()
+                        stomachDonuts?.remove()
                     }
                 }
         }
