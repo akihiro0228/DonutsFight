@@ -12,7 +12,7 @@ class StomachDonuts: Donuts {
 
     init(eatDonuts: EatDonuts) {
         super.init()
-        self.size = CGSize(width: eatDonuts.size.width + 30, height: eatDonuts.size.height + 30)
+        self.size = self.sizeType.size()
         self.type = eatDonuts.type
         self.texture = SKTexture(imageNamed: self.type.imageName())
         self.name = "stomachDonuts"

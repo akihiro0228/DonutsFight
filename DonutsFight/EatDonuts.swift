@@ -12,7 +12,8 @@ class EatDonuts: Donuts {
 
     override init() {
         super.init()
-        setRandomSize(Min: 15, Max: 45)
+        let sizeWhenStomach = self.sizeType.size()
+        self.size = CGSize(width: sizeWhenStomach.width - 30, height: sizeWhenStomach.height - 30)
         self.position = CGPoint(x: 200, y: 0)
         self.texture = SKTexture(imageNamed: self.type.imageName())
     }
