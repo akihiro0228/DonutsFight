@@ -25,6 +25,10 @@ class DonutsMan: SpriteNode {
         self.texture = images[0]
         self.size = CGSize(width: 80, height: 80)
         self.position = CGPoint(x: -110, y: 0)
+
+        let moguImages = Array(self.images[0...1])
+        let action = SKAction.animateWithTextures(moguImages, timePerFrame: 0.2)
+        self.runAction(SKAction.repeatActionForever(action))
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,13 +37,7 @@ class DonutsMan: SpriteNode {
 
     func eatAnimation() {
         let eatImages  = Array(self.images[2...3])
-        let moguImages = Array(self.images[0...1])
-        let action01 = SKAction.animateWithTextures(eatImages, timePerFrame: 0.2)
-        let action02 = SKAction.animateWithTextures(moguImages, timePerFrame: 0.2)
-        let repeatAction02 = SKAction.repeatAction(action02, count: 5)
-        
-        self.runAction(SKAction.sequence([action01, repeatAction02]), completion: {
-
-        })
+        let action = SKAction.animateWithTextures(eatImages, timePerFrame: 0.2)
+        self.runAction(action)
     }
 }
