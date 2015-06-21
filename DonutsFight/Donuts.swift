@@ -30,6 +30,23 @@ enum SizeType {
         }
     }
 
+    func removeTime() -> NSTimeInterval {
+        switch self{
+        case SizeType.Type01:
+            return 1.0
+        case SizeType.Type02:
+            return 1.5
+        case SizeType.Type03:
+            return 2.0
+        case SizeType.Type04:
+            return 2.5
+        case SizeType.Type05:
+            return 3.0
+        default :
+            return 1.0
+        }
+    }
+
     static func random() -> SizeType {
         let rnd = arc4random() % 5
 

@@ -31,14 +31,12 @@ class StomachDonuts: Donuts {
 
         CGPathCloseSubpath(path)
         let arc = SKShapeNode(path: path)
-        //arc.fillColor = UIColor(red: 0, green: 0.46, blue: 0.73, alpha: 0.2)
         arc.fillColor = UIColor.blackColor()
         arc.strokeColor = UIColor.clearColor()
         arc.alpha = 0.5
         self.addChild(arc)
 
-        // TODO: サイズによって変わる
-        let removeTime = 1.3
+        let removeTime = self.sizeType.removeTime()
 
         let action = SKAction.customActionWithDuration(removeTime, actionBlock: {(node, time) in
             let rad = CGFloat(2.0 * M_PI) * CGFloat(time) / CGFloat(removeTime)
