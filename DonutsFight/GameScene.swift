@@ -41,9 +41,9 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
     var gameTime : Double
     var gameCount : Int
     var createEatDonutsTime : Double
-    var chainCount : Int {
+    var removeCount : Int {
         didSet {
-            if chainCount > 0 {
+            if removeCount > 0 {
                 self.eatSeat.paused = true
             }
             else {
@@ -68,7 +68,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.gameTime = 0
         self.gameCount   = 0
         self.createEatDonutsTime = 0
-        self.chainCount = 0
+        self.removeCount = 0
         super.init(size: size)
 
         setup()
@@ -187,7 +187,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self)
 
             let target = self.nodeAtPoint(location) as? StomachDonuts
-            if self.chainCount == 0 && target?.name == "stomachDonuts" {
+            if self.removeCount == 0 && target?.name == "stomachDonuts" {
                 target?.startRemoveAnimation()
             }
         }

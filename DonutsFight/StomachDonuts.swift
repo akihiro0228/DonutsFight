@@ -57,7 +57,7 @@ class StomachDonuts: Donuts {
 
     func remove() {
         let scene = self.parent!.parent!.parent as! GameScene
-        scene.chainCount++
+        scene.removeCount++
 
         self.alpha = 0.3
         self.size = CGSize(width: self.size.width * 1.2, height: self.size.height * 1.2)
@@ -69,7 +69,7 @@ class StomachDonuts: Donuts {
 
         self.runAction(SKAction.waitForDuration(1.3), completion: {
             self.removeFromParent()
-            scene.chainCount--
+            scene.removeCount--
         })
     }
 }
