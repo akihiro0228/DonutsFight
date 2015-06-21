@@ -107,10 +107,12 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.setGravity(CGVectorMake(0, -2.0))
 
         self.physicsWorld.contactDelegate = self
+
+        self.paused = true
     }
 
     override func didMoveToView(view: SKView) {
-
+        self.paused = false
     }
 
     // TODO: もっと綺麗に書けるはずだけど、GameJam中なのでゴメンナサイ
@@ -157,26 +159,28 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        // FPSに依存しない実時間を測る
-        if !self.isLastUpdateTimeInitialized {
-            self.isLastUpdateTimeInitialized = true
-            self.lastUpdateTime = currentTime;
+        if !self.paused {
+            // FPSに依存しない実時間を測る
+            if !self.isLastUpdateTimeInitialized {
+                self.isLastUpdateTimeInitialized = true
+                self.lastUpdateTime = currentTime;
+            }
+
+            let timeSinceLast = currentTime - self.lastUpdateTime
+            self.lastUpdateTime = currentTime
+
+            self.gameTime += timeSinceLast
+
+
+            // 一定間隔でドーナツを生成する
+            let donutsInterval = Int(self.eatDunutsDuration / 5)
+            if  Int(self.gameTime) != Int(self.createEatDonutsTime) && Int(self.gameTime) % donutsInterval == 0{
+                self.createEatDonuts()
+                self.createEatDonutsTime = self.gameTime
+            }
+
+            self.gameCount++
         }
-
-        let timeSinceLast = currentTime - self.lastUpdateTime
-        self.lastUpdateTime = currentTime
-
-        self.gameTime += timeSinceLast
-
-
-        // 一定間隔でドーナツを生成する
-        let donutsInterval = Int(self.eatDunutsDuration / 5)
-        if  Int(self.gameTime) != Int(self.createEatDonutsTime) && Int(self.gameTime) % donutsInterval == 0{
-            self.createEatDonuts()
-            self.createEatDonutsTime = self.gameTime
-        }
-
-        self.gameCount++
     }
 
     func createEatDonuts() {

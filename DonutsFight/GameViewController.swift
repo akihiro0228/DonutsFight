@@ -26,7 +26,7 @@ class GameViewController: UIViewController {
         skView.multipleTouchEnabled = false
 
         convert.sceneSize = self.gameView.bounds.size
-        let scene = GameScene(size: convert.sceneSize)
+        let scene = TitleScene(size: convert.sceneSize)
         skView.presentScene(scene)
     }
 

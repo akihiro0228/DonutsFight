@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C32A09AC1B367CEA002AE0A2 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A09AB1B367CEA002AE0A2 /* TitleScene.swift */; };
 		C36FEA761B352BBA00C2521D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA751B352BBA00C2521D /* AppDelegate.swift */; };
 		C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA791B352BBA00C2521D /* GameScene.swift */; };
 		C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA7B1B352BBA00C2521D /* GameViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C32A09AB1B367CEA002AE0A2 /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		C36FEA701B352BBA00C2521D /* DonutsFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutsFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36FEA741B352BBA00C2521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36FEA751B352BBA00C2521D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C36FEA791B352BBA00C2521D /* GameScene.swift */,
+				C32A09AB1B367CEA002AE0A2 /* TitleScene.swift */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				C36FEAAD1B35361100C2521D /* BaseScene.swift in Sources */,
 				C36FEABA1B355A7F00C2521D /* Donuts.swift in Sources */,
 				C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */,
+				C32A09AC1B367CEA002AE0A2 /* TitleScene.swift in Sources */,
 				C36FEAAB1B35358300C2521D /* LabelNode.swift in Sources */,
 				C36FEAA91B35357700C2521D /* SpriteNode.swift in Sources */,
 				C36FEAB81B354F6A00C2521D /* StomachDonuts.swift in Sources */,
