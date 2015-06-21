@@ -33,6 +33,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
     let stomachSeat : SpriteNode
     let donutsMan   : DonutsMan
     let scoreSeat   : SpriteNode
+    let score       : Score
 
     var eatDunutsDuration : CGFloat
     var isLastUpdateTimeInitialized : Bool
@@ -60,6 +61,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.stomachSeat = SpriteNode()
         self.donutsMan   = DonutsMan()
         self.scoreSeat   = SpriteNode()
+        self.score       = Score()
         self.eatDunutsDuration = 5
         self.isLastUpdateTimeInitialized = false
         self.lastUpdateTime = 0
@@ -88,10 +90,31 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.eatSeat.zPosition = 100
         self.world.addChild(self.eatSeat)
 
+        // スコアシート
         self.scoreSeat.size = CGSize(width: 320, height: 142)
         self.scoreSeat.texture = SKTexture(imageNamed: "score_background")
         self.eatSeat.addChild(self.scoreSeat)
 
+        // スコア
+        let scoreLabel = LabelNode()
+        scoreLabel.text = "すこあ"
+        scoreLabel.position = CGPoint(x: 45, y: 40)
+        scoreLabel.fontSize = 16
+        scoreLabel.fontName = "かんじゅくゴシック"
+        scoreLabel.fontColor = UIColor.whiteColor()
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        scoreLabel.verticalAlignmentMode   = SKLabelVerticalAlignmentMode.Center
+        self.scoreSeat.addChild(scoreLabel)
+
+        self.score.position = CGPoint(x: 105, y: 40)
+        self.score.fontSize = 16
+        self.score.fontName = "かんじゅくゴシック"
+        self.score.fontColor = UIColor.whiteColor()
+        self.score.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Center
+        self.score.verticalAlignmentMode   = SKLabelVerticalAlignmentMode.Center
+        self.scoreSeat.addChild(self.score)
+
+        // ギャラリーシート
         let gallery = SpriteNode()
         gallery.size = CGSize(width: 320, height: 142)
         gallery.texture = SKTexture(imageNamed: "gallery")

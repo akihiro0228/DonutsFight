@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C32A09AC1B367CEA002AE0A2 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A09AB1B367CEA002AE0A2 /* TitleScene.swift */; };
+		C32A09AE1B3687AB002AE0A2 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A09AD1B3687AB002AE0A2 /* Score.swift */; };
 		C36FEA761B352BBA00C2521D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA751B352BBA00C2521D /* AppDelegate.swift */; };
 		C36FEA7A1B352BBA00C2521D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA791B352BBA00C2521D /* GameScene.swift */; };
 		C36FEA7C1B352BBA00C2521D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36FEA7B1B352BBA00C2521D /* GameViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		C32A09AB1B367CEA002AE0A2 /* TitleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
+		C32A09AD1B3687AB002AE0A2 /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		C36FEA701B352BBA00C2521D /* DonutsFight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DonutsFight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C36FEA741B352BBA00C2521D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C36FEA751B352BBA00C2521D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				C36FEAB51B354EE500C2521D /* EatDonuts.swift */,
 				C36FEAB71B354F6A00C2521D /* StomachDonuts.swift */,
 				C36FEABB1B355DD200C2521D /* DonutsMan.swift */,
+				C32A09AD1B3687AB002AE0A2 /* Score.swift */,
 			);
 			name = Component;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32A09AE1B3687AB002AE0A2 /* Score.swift in Sources */,
 				C36FEAB31B35367900C2521D /* Camera.swift in Sources */,
 				C36FEAB61B354EE500C2521D /* EatDonuts.swift in Sources */,
 				C36FEAAF1B35366900C2521D /* World.swift in Sources */,
