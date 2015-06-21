@@ -40,7 +40,17 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
     var gameTime : Double
     var gameCount : Int
     var createEatDonutsTime : Double
-    var isRemoveDonuts : Bool
+    var chainCount : Int {
+        didSet {
+            if chainCount > 0 {
+                self.eatSeat.paused = true
+            }
+            else {
+                self.eatSeat.paused = false
+                self.isLastUpdateTimeInitialized = false
+            }
+        }
+    }
 
     override init(size: CGSize) {
         self.world       = World()
@@ -56,7 +66,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.gameTime = 0
         self.gameCount   = 0
         self.createEatDonutsTime = 0
-        self.isRemoveDonuts = false
+        self.chainCount = 0
         super.init(size: size)
 
         setup()
@@ -152,14 +162,14 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
             let location = touch.locationInNode(self)
 
             let target = self.nodeAtPoint(location) as? StomachDonuts
-            if !self.isRemoveDonuts && target?.name == "stomachDonuts" {
+            if self.chainCount == 0 && target?.name == "stomachDonuts" {
                 target?.startRemoveAnimation()
             }
         }
     }
    
     override func update(currentTime: CFTimeInterval) {
-        if !self.paused {
+        if !self.paused && !self.eatSeat.paused {
             // FPSに依存しない実時間を測る
             if !self.isLastUpdateTimeInitialized {
                 self.isLastUpdateTimeInitialized = true

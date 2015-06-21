@@ -24,6 +24,9 @@ class StomachDonuts: Donuts {
     }
 
     func startRemoveAnimation() {
+        let scene = self.parent!.parent!.parent as! GameScene
+        scene.chainCount++
+
         self.alpha = 0.3
         self.size = CGSize(width: self.size.width * 1.2, height: self.size.height * 1.2)
 
@@ -32,10 +35,9 @@ class StomachDonuts: Donuts {
         self.physicsBody?.categoryBitMask    = Category.RemoveDonuts.bit()
         self.physicsBody?.contactTestBitMask = Category.StomachDonuts.bit()
 
-        self.runAction(SKAction.waitForDuration(2), completion: {
-            let scene = self.parent!.parent!.parent as! GameScene
+        self.runAction(SKAction.waitForDuration(1.3), completion: {
             self.removeFromParent()
-            scene.isRemoveDonuts = false
+            scene.chainCount--
         })
     }
 }
