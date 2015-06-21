@@ -14,6 +14,7 @@ class EatDonuts: Donuts {
         super.init()
         setRandomSize(Min: 15, Max: 45)
         self.position = CGPoint(x: 200, y: 0)
+        self.texture = SKTexture(imageNamed: self.type.imageName())
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -6,9 +6,26 @@
 //  Copyright (c) 2015年 akihiro. All rights reserved.
 //
 
+enum Category {
+    case StomachDonuts
+    case RemoveDonuts
+    case Wall
+
+    func bit() -> UInt32 {
+        switch self{
+        case Category.StomachDonuts:
+            return 0x1 << 0
+        case Category.RemoveDonuts:
+            return 0x1 << 1
+        case Category.Wall:
+            return 0x1 << 0
+        }
+    }
+}
+
 import SpriteKit
 
-class GameScene: BaseScene {
+class GameScene: BaseScene, SKPhysicsContactDelegate {
     let world       : World
     let overlay     : Overlay
     let camera      : Camera
@@ -23,6 +40,7 @@ class GameScene: BaseScene {
     var gameTime : Double
     var gameCount : Int
     var createEatDonutsTime : Double
+    var isRemoveDonuts : Bool
 
     override init(size: CGSize) {
         self.world       = World()
@@ -38,6 +56,7 @@ class GameScene: BaseScene {
         self.gameTime = 0
         self.gameCount   = 0
         self.createEatDonutsTime = 0
+        self.isRemoveDonuts = false
         super.init(size: size)
 
         setup()
@@ -81,9 +100,13 @@ class GameScene: BaseScene {
         // 壁
         let wallRect = CGRect(x: 15, y: 15, width: 290, height: 538)
         self.physicsBody = SKPhysicsBody(edgeLoopFromRect: convert.oRect(wallRect))
+        self.physicsBody?.categoryBitMask = Category.Wall.bit()
+        self.physicsBody?.collisionBitMask = Category.StomachDonuts.bit()
 
         // 重力を発生させる
         self.setGravity(CGVectorMake(0, -2.0))
+
+        self.physicsWorld.contactDelegate = self
     }
 
     override func didMoveToView(view: SKView) {
@@ -98,14 +121,37 @@ class GameScene: BaseScene {
         self.camera.position = point
     }
 
+    func didBeginContact(contact: SKPhysicsContact) {
+        var firstBody, secondBody: SKPhysicsBody
+
+        if contact.bodyA.categoryBitMask > contact.bodyB.categoryBitMask {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+
+        if firstBody.categoryBitMask & Category.RemoveDonuts.bit() != 0 &&
+            secondBody.categoryBitMask & Category.StomachDonuts.bit() != 0 {
+                let removeDonuts  = firstBody.node  as? StomachDonuts
+                let stomachDonuts = secondBody.node as? StomachDonuts
+
+                if removeDonuts != nil && stomachDonuts != nil {
+                    if removeDonuts!.type == stomachDonuts!.type {
+                        stomachDonuts?.startRemoveAnimation()
+                    }
+                }
+        }
+    }
+
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         for touch in (touches as! Set<UITouch>) {
             let location = touch.locationInNode(self)
 
-            let target = self.nodeAtPoint(location)
-            if target.name == "stomachDonuts" {
-                // TODO: 本当はただ消すだけじゃない
-                target.removeFromParent()
+            let target = self.nodeAtPoint(location) as? StomachDonuts
+            if !self.isRemoveDonuts && target?.name == "stomachDonuts" {
+                target?.startRemoveAnimation()
             }
         }
     }
@@ -142,6 +188,9 @@ class GameScene: BaseScene {
     func createStomachDonuts(eatDonuts: EatDonuts) {
         let stomachDonuts = StomachDonuts(eatDonuts: eatDonuts)
         stomachDonuts.onPhysics()
+        stomachDonuts.physicsBody?.categoryBitMask    = Category.StomachDonuts.bit()
+        stomachDonuts.physicsBody?.collisionBitMask   = Category.StomachDonuts.bit()
+        stomachDonuts.physicsBody?.contactTestBitMask = Category.RemoveDonuts.bit()
         self.stomachSeat.addChild(stomachDonuts)
     }
 }

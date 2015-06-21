@@ -52,8 +52,6 @@ class Donuts: SpriteNode {
     override init() {
         self.type = DonutsType.random()
         super.init()
-
-        self.texture = SKTexture(imageNamed: self.type.imageName())
     }
 
     required init?(coder aDecoder: NSCoder) {
