@@ -41,6 +41,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
     var gameTime : Double
     var gameCount : Int
     var createEatDonutsTime : Double
+    var chainCount : Int
     var removeCount : Int {
         didSet {
             if removeCount > 0 {
@@ -49,6 +50,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
             else {
                 self.eatSeat.paused = false
                 self.isLastUpdateTimeInitialized = false
+                self.chainCount = 0
             }
         }
     }
@@ -68,6 +70,7 @@ class GameScene: BaseScene, SKPhysicsContactDelegate {
         self.gameTime = 0
         self.gameCount   = 0
         self.createEatDonutsTime = 0
+        self.chainCount = 0
         self.removeCount = 0
         super.init(size: size)
 

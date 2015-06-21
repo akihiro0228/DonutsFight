@@ -22,9 +22,14 @@ class Score: LabelNode {
         fatalError("init(coder:) has not been implemented")
     }
 
+    func addScore(score: Int) {
+        self._score = self._score + score
+        self.text = self._score.description
+    }
+
     func setScore(score: Int) {
         self._score = score
-        self.text = score.description
+        self.text = self._score.description
     }
 
     func getScore() -> Int {

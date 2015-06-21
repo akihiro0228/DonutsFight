@@ -58,6 +58,7 @@ class StomachDonuts: Donuts {
     func remove() {
         let scene = self.parent!.parent!.parent as! GameScene
         scene.removeCount++
+        scene.chainCount++
 
         self.alpha = 0.3
         self.size = CGSize(width: self.size.width * 1.2, height: self.size.height * 1.2)
@@ -66,6 +67,10 @@ class StomachDonuts: Donuts {
         self.physicsBody?.dynamic = false
         self.physicsBody?.categoryBitMask    = Category.RemoveDonuts.bit()
         self.physicsBody?.contactTestBitMask = Category.StomachDonuts.bit()
+
+        // チェインが多く、サイズが大きいほどスコアが高い
+        let score = scene.chainCount * Int(self.size.width / 10)
+        scene.score.addScore(score)
 
         self.runAction(SKAction.waitForDuration(1.3), completion: {
             self.removeFromParent()
